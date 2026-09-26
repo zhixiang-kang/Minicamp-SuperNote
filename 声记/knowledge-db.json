@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "description": "声记学习知识重点词库，可继续扩展。命中术语的句子会被优先保留并标记。",
+  "categories": {
+    "算法与数据结构": [
+      "贪心算法", "贪心", "动态规划", "分治", "递归", "递推", "回溯", "剪枝", "二分查找", "排序", "快速排序", "归并排序", "堆排序", "广度优先搜索", "深度优先搜索", "最短路径", "最小生成树", "并查集", "拓扑排序", "网络流", "字符串匹配", "哈希表", "数组", "链表", "栈", "队列", "堆", "二叉树", "红黑树", "字典树", "图", "单调栈", "双指针", "滑动窗口", "greedy", "dynamic programming", "divide and conquer", "recursion", "backtracking", "binary search", "quicksort", "merge sort", "breadth-first search", "depth-first search", "shortest path", "minimum spanning tree", "union-find", "topological sort", "hash table", "data structure", "array", "linked list", "stack", "queue", "heap", "tree", "graph"
+    ],
+    "复杂度与理论": [
+      "时间复杂度", "空间复杂度", "渐进复杂度", "复杂度分析", "大 O", "Big O", "NP 完全", "NP-hard", "可计算性", "最优子结构", "重叠子问题", "状态转移", "状态压缩", "时间复杂度", "space complexity", "time complexity", "computational complexity", "optimal substructure", "overlapping subproblems", "state transition", "memoization"
+    ],
+    "数学与统计": [
+      "微积分", "导数", "积分", "极限", "线性代数", "矩阵", "向量", "概率", "贝叶斯", "随机变量", "期望", "方差", "标准差", "假设检验", "置信区间", "相关系数", "回归分析", "p 值", "p值", "均值", "中位数", "微分方程", "calculus", "derivative", "integral", "linear algebra", "matrix", "vector", "probability", "Bayesian", "random variable", "variance", "standard deviation", "hypothesis testing", "confidence interval", "regression", "correlation", "p-value"
+    ],
+    "机器学习与人工智能": [
+      "机器学习", "深度学习", "监督学习", "无监督学习", "强化学习", "神经网络", "卷积神经网络", "循环神经网络", "注意力机制", "Transformer", "大语言模型", "语言模型", "训练集", "测试集", "验证集", "过拟合", "欠拟合", "梯度下降", "损失函数", "反向传播", "特征工程", "分类", "聚类", "回归", "机器学习", "深度学习", "supervised learning", "unsupervised learning", "reinforcement learning", "neural network", "convolutional neural network", "attention mechanism", "transformer", "large language model", "training set", "test set", "validation set", "overfitting", "underfitting", "gradient descent", "loss function", "backpropagation", "feature engineering", "classification", "clustering"
+    ],
+    "科学研究": [
+      "研究问题", "研究假设", "实验设计", "对照组", "实验组", "自变量", "因变量", "控制变量", "样本量", "随机对照", "双盲", "可重复性", "因果关系", "相关性", "实证", "定性研究", "定量研究", "文献综述", "研究方法", "研究结果", "研究结论", "科学证据", "research question", "hypothesis", "experimental design", "control group", "treatment group", "independent variable", "dependent variable", "sample size", "randomized controlled", "double blind", "reproducibility", "causal relationship", "correlation", "qualitative research", "quantitative research", "literature review", "methodology", "findings", "scientific evidence"
+    ],
+    "物理与自然科学": [
+      "牛顿定律", "相对论", "量子力学", "能量守恒", "动量守恒", "热力学", "熵", "电磁学", "波函数", "光合作用", "进化论", "基因", "DNA", "生态系统", "化学反应", "催化剂", "原子", "分子", "Newton's laws", "relativity", "quantum mechanics", "conservation of energy", "thermodynamics", "entropy", "electromagnetism", "wave function", "evolution", "gene", "ecosystem", "chemical reaction", "catalyst", "atom", "molecule"
+    ],
+    "经济与社会科学": [
+      "供给与需求", "机会成本", "边际效用", "通货膨胀", "国内生产总值", "GDP", "市场均衡", "博弈论", "激励机制", "社会资本", "认知偏差", "行为经济学", "供给需求", "opportunity cost", "marginal utility", "inflation", "market equilibrium", "game theory", "incentive", "cognitive bias", "behavioral economics"
+    ]
+  }
+}

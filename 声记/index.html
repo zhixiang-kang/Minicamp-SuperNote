@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111827" />
+    <link rel="icon" type="image/svg+xml" href="声记图标.svg" />
+    <link rel="apple-touch-icon" href="声记图标.svg" />
+    <title>声记 · Audio Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark"><span></span><span></span><span></span></div>
+          <div><strong>声记</strong><small>Audio Notes</small></div>
+        </div>
+
+        <button class="new-note-btn" id="newNoteButton"><span>＋</span> 新建记录</button>
+
+        <nav class="main-nav" aria-label="主导航">
+          <button class="nav-item active"><span class="nav-icon">⌂</span> 全部记录 <em id="recordCount">0</em></button>
+          <button class="nav-item"><span class="nav-icon">★</span> 已收藏</button>
+          <button class="nav-item"><span class="nav-icon">▣</span> 待办事项</button>
+        </nav>
+
+        <div class="sidebar-foot">
+          <div class="storage-label"><span>本地空间</span><span>24%</span></div>
+          <div class="storage-bar"><span></span></div>
+          <button class="settings-button"><span>⚙</span> 设置</button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">我的工作台</p>
+            <h1>把声音，变成可行动的记录。</h1>
+          </div>
+          <div class="top-actions">
+            <label class="search-box"><span>⌕</span><input id="searchInput" placeholder="搜索记录、关键词…" /></label>
+            <button class="avatar" title="账户">林</button>
+          </div>
+        </header>
+
+        <section class="hero-card">
+          <div class="hero-copy">
+            <span class="status-pill"><i></i> 本地演示模式</span>
+            <h2>听见重点，<br /><span>马上行动。</span></h2>
+            <p>上传一段音频，声记会帮你整理出摘要、关键结论和待办事项。</p>
+            <div class="hero-actions">
+              <button class="primary-button" id="uploadButton"><span>↑</span> 上传音频</button>
+              <button class="secondary-button" id="recordButton"><span class="record-dot"></span> 开始录音</button>
+              <input id="fileInput" type="file" accept="audio/*" hidden />
+            </div>
+            <p class="hint">支持 MP3、M4A、WAV · 文件会保存在本机浏览器中</p>
+          </div>
+          <div class="hero-orb" aria-hidden="true">
+            <div class="orb-ring ring-one"></div><div class="orb-ring ring-two"></div>
+            <div class="orb-core"><span class="wave wave-a"></span><span class="wave wave-b"></span><span class="wave wave-c"></span><span class="wave wave-d"></span><span class="wave wave-e"></span></div>
+          </div>
+        </section>
+
+        <section class="live-section" id="liveSection">
+          <div class="section-head live-head">
+            <div><h2>实时提取重点</h2><p>直接说出你的想法，声记会边听边整理</p></div>
+            <span class="privacy-note" id="asrStatus">● 正在检查多语种识别服务…</span>
+          </div>
+          <div class="live-grid">
+            <div class="live-card transcript-card">
+              <div class="live-card-head"><span class="live-label"><i></i> 实时听写</span><label class="language-picker"><span>语言</span><select id="languageSelect"><option value="auto">自动识别（混合语言）</option><option value="zh-CN">中文</option><option value="en-US">English</option><option value="es-ES">Español</option><option value="hi-IN">हिन्दी</option><option value="ar-SA">العربية</option><option value="pt-BR">Português</option><option value="bn-BD">বাংলা</option><option value="ru-RU">Русский</option><option value="ur-PK">اردو</option><option value="id-ID">Bahasa Indonesia</option><option value="fr-FR">Français</option><option value="de-DE">Deutsch</option><option value="ja-JP">日本語</option><option value="ko-KR">한국어</option><option value="tr-TR">Türkçe</option></select></label><span class="speech-status" id="speechStatus">准备就绪</span></div>
+              <div class="transcript-box" id="transcriptOutput"><span class="transcript-placeholder">点击“开始说话”，然后自然地说出你的内容……</span></div>
+              <div class="live-controls">
+                <button class="primary-button speech-button" id="speechButton"><span>●</span> 开始说话</button>
+                <button class="clear-button" id="clearSpeechButton">清空</button>
+              </div>
+              <p class="live-hint" id="liveHint">自动识别模式会使用多语种 ASR 检测混合语言；固定语言模式使用浏览器识别。</p>
+            </div>
+            <div class="live-card focus-card">
+              <div class="live-card-head"><span class="live-label"><i class="focus-dot"></i> 我的重点</span><span class="focus-count" id="focusCount">0 条 · 学术优先</span></div>
+              <div class="live-summary" id="liveSummary">说话后，这里会生成一段简洁总结。</div>
+              <ul class="live-highlights" id="liveHighlights"><li class="highlights-empty">说话后，重点会显示在这里</li></ul>
+              <div class="live-categories"><div><b>行动项</b><span id="liveActions">—</span></div><div><b>决定</b><span id="liveDecisions">—</span></div></div>
+              <button class="save-live-button" id="saveLiveButton" disabled>保存为记录 <span>→</span></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-head">
+          <div><h2>最近记录</h2><p>你的音频摘要和行动线索都在这里</p></div>
+          <button class="sort-button" id="sortButton">最近更新 <span>⌄</span></button>
+        </section>
+
+        <section class="records-grid" id="recordsGrid"></section>
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">◌</div><h3>还没有记录</h3><p>上传一段音频，开始你的第一条智能记录。</p>
+          <button class="text-button" id="emptyUploadButton">上传音频 <span>→</span></button>
+        </div>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <dialog class="detail-dialog" id="detailDialog">
+      <button class="dialog-close" id="dialogClose" aria-label="关闭">×</button>
+      <div id="dialogContent"></div>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
